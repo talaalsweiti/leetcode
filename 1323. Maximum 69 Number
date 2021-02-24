@@ -17,3 +17,22 @@ public:
      
     }
 };
+
+
+//another sol.
+
+class Solution {
+public:
+    int maximum69Number (int num) {
+        int size =  to_string(num).length();  
+        for(int i=size-1;i>-1;i--) {
+          int digit = (num/(int)pow(10,i))%10;   
+            if(digit==6){
+            num+=(3*pow(10,i));
+            break;
+            }
+        }
+        return num;
+     
+    }
+};
