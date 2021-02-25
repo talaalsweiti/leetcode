@@ -41,3 +41,25 @@ public:
         return ans;
     }
 };
+
+//third sol.
+
+
+class Solution {
+public:
+    string restoreString(string s, vector<int>& indices) {
+        string ans = "" ;
+        int j = 0,i=0;
+       while( j<indices.size()) {
+          if(indices[i]==j){
+              ans+=s[i];
+              j++;
+              i=0;        
+          }
+          else
+          i++;
+      }
+
+        return ans;
+    }
+};
