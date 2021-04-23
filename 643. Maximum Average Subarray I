@@ -1,23 +1,23 @@
 class Solution {
 public:
     double findMaxAverage(vector<int>& nums, int k) {
-        vector<double> av;
+        double max = -1e9;
         int window = k-1 ;
         int l =0;
         double temp =0;  
         while(l<=window) {
             temp+=nums[l];
             l++;
-        }      
-        av.push_back(temp/k);
+        }    
+        if(temp/k > max) max = temp/k;
         l=0;
         for(int j=window+1;j<nums.size();j++) {  
                  temp-=nums[l];    
                  temp+=nums[j];
-                 av.push_back(temp/k);
+                  if(temp/k > max) max = temp/k;
                  l++;
             }
-	double mx = *max_element(av.begin(), av.end());
-    return mx;
+	
+    return max;
     }
 };
