@@ -64,3 +64,28 @@ public:
         
     }
 };
+
+
+//comb sort
+class Solution {
+public:
+    void sortColors(vector<int>& nums) {
+        //using comb sort
+        bool isSwapped = true;
+        int gap = nums.size();
+        while(isSwapped==true || gap!=1) {
+            isSwapped=false;
+            gap=(gap*10)/13;
+            if(gap < 1) gap = 1 ;
+            for(int i=0;i<nums.size()-gap;i++) {
+                if(nums[i]>nums[i+gap]) {
+                    swap(nums[i],nums[i+gap]);
+                    isSwapped=true;
+                }
+            }
+          
+            
+        }
+        
+    }
+};
