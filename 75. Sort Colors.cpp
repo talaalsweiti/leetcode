@@ -1,5 +1,30 @@
 class Solution {
 public:
+    void sortColors(vector<int>& nums) {
+        int red =0 , blue = nums.size()-1;
+        int current = 0;
+        while(current<=blue){
+             if(nums[current]==0){
+                swap(nums[current],nums[red]);
+                current++;
+                red++;
+            }
+            else if(nums[current]==2){
+                swap(nums[current],nums[blue]);
+                blue--;
+            }
+            else
+            current++;
+        }
+
+        
+    }
+};
+
+
+////////////////////////////////
+class Solution {
+public:
     //BUBBLE SORT
     void sortColors(vector<int>& nums) {
         for(int i=0;i<nums.size()-1;i++) {
