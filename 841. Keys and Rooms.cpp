@@ -11,7 +11,7 @@ public:
     void dfs(vector<vector<int>>& rooms , int node) {
         visited[node] = true;
         for(int i=0;i<rooms[node].size();i++ ) {
-            if(visited[rooms[node][i]]==false) {
+            if(!visited[rooms[node][i]]) {
                 dfs(rooms,rooms[node][i]);
             }
         }
