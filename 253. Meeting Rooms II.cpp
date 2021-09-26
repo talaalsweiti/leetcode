@@ -1,3 +1,9 @@
+/*
+Given an array of meeting time intervals intervals where intervals[i] = [starti, endi], return the minimum number of conference rooms required.
+
+*/
+
+
 class Solution {
 public:
     int minMeetingRooms(vector<vector<int>>& intervals) {
